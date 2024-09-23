@@ -1,6 +1,6 @@
 //import 라이브러리
 import React, {useState} from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const WriteForm = () => {
@@ -55,7 +55,7 @@ const WriteForm = () => {
             console.log(response); //수신데이타
             console.log(response.data); //수신데이타
 
-            if(response.data === 1){
+            if( response.data.result ==='success'){
                 //리다이렉트
                 navigate("/list");
 
@@ -99,7 +99,7 @@ const WriteForm = () => {
 
 
             <br/><br/>
-            <a href="">리스트로 가기</a>
+            <Link to="/list">리스트로 가기</Link>
 
 
         </>

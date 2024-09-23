@@ -67,7 +67,7 @@ const List2 = () => {
                 //getPersonList();
 
                 //우리 리스트(배열) personList 에서 방금삭제한 값만 제거된 새로운 배열
-                let newArray =personList.filter((person)=>{
+                let newArray = personList.filter((person)=>{
                     return person.personId !== no;
                 });
 

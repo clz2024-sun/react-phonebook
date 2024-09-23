@@ -24,7 +24,7 @@ const List = () => {
         }).then(response => {
             console.log(response.data); //수신데이타
             //personList = response.data;
-            setPersonList(response.data);
+            setPersonList(response.data.apiData);
 
         }).catch(error => {
             console.log(error);
