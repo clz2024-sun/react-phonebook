@@ -2,8 +2,13 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+//import { useNavigate } from 'react-router-dom';
 
 const List = () => {
+    /*
+    //리다이렉트안됨 (같은페이지의 리다이렉트는 안된다)
+    const navigate = useNavigate();
+    */
 
     /*---상태관리 변수들(값이 변화면 화면 랜더링 )-----*/
     const [personList, setPersonList] = useState([]);
@@ -50,6 +55,11 @@ const List = () => {
         }).then(response => {
             console.log(response); //수신데이타
             console.log(response.data);
+            /*
+            //리다이렉트안됨 (같은페이지의 리다이렉트는 안된다)
+            navigate("/list");
+            */
+            getPersonList();
 
         }).catch(error => {
             console.log(error);
