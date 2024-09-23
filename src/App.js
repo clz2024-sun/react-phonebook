@@ -3,6 +3,8 @@ import List from './pages/List';
 import WriteForm from './pages/WriteForm';
 import EditForm from './pages/EditForm';
 
+import List2 from './pages/List2';
+
 function App() {
   return (
     <div>
@@ -11,6 +13,8 @@ function App() {
           <Route path='/list' element={<List />} />
           <Route path='/writeform' element={<WriteForm />} />
           <Route path='/editform/:no' element={<EditForm />} />
+
+          <Route path='/list2' element={<List2 />} />
         </Routes>
       </BrowserRouter>
     </div>

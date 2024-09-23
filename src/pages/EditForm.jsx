@@ -1,6 +1,7 @@
 //import 라이브러리
 import React, {useEffect, useState} from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
+
 import axios from 'axios';
 
 const EditForm = () => {
@@ -85,7 +86,15 @@ const EditForm = () => {
         
             responseType: 'json' //수신타입
         }).then(response => {
-            console.log(response); //수신데이타
+            console.log(response.data.result); //수신데이타
+
+            if(response.data.result === 'success'){
+                //성공로직
+                navigate("/list");
+            }else{
+                alert(response.data.message);
+            }
+
         
         }).catch(error => {
             console.log(error);
