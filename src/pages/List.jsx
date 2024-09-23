@@ -49,18 +49,27 @@ const List = () => {
         console.log(no);
         axios({
             method: 'delete', 			// put, post, delete                   
-            url: 'http://localhost:9000/api/persons/'+no,
+            url: 'http://localhost:9000/api/persons/'+99,
         
             responseType: 'json' //수신타입
         }).then(response => {
+            console.log("===============================");
             console.log(response); //수신데이타
             console.log(response.data);
-            /*
-            //리다이렉트안됨 (같은페이지의 리다이렉트는 안된다)
-            navigate("/list");
-            */
-            getPersonList();
+            console.log(response.data.result);
+            console.log("===============================");
+            
+            if( response.data.result ==='success'){
+                /*
+                //리다이렉트안됨 (같은페이지의 리다이렉트는 안된다)
+                navigate("/list");
+                */
+                //getPersonList();
+            }else {
+                alert(response.data.message);
+            }
 
+    
         }).catch(error => {
             console.log(error);
         });
@@ -82,7 +91,7 @@ const List = () => {
                         <table border="1">
                         <tbody>
                             <tr>
-                                <th>이름(name)</th>
+                                <th>이름(name) {personVo.personId}</th>
                                 <td>{personVo.name}</td>
                             </tr>
                             <tr>
@@ -94,7 +103,7 @@ const List = () => {
                                 <td>{personVo.company}</td>
                             </tr>
                             <tr>
-                                <td><Link to="" rel="noreferrer noopener">[수정폼으로 이동]</Link></td>
+                                <td><Link to={ '/editform/'+personVo.personId } rel="noreferrer noopener">[수정폼으로 이동]</Link></td>
                                 <td><button type="button" onClick={()=>{ handleDel(personVo.personId) }}>삭제</button></td>
                             </tr>
 
