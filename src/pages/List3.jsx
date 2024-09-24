@@ -4,7 +4,11 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 //import { useNavigate } from 'react-router-dom';
 
-const List2 = () => {
+//import 컴포넌트
+import ItemPerson from './ItemPerson';
+
+
+const List3 = () => {
     /*
     //리다이렉트안됨 (같은페이지의 리다이렉트는 안된다)
     const navigate = useNavigate();
@@ -95,30 +99,8 @@ const List2 = () => {
 
             {personList.map((personVo)=>{
                 return (
-                    <div key={personVo.personId}>
-                        <table border="1">
-                            <tbody>
-                                <tr>
-                                    <th>이름(name) {personVo.personId}</th>
-                                    <td>{personVo.name}</td>
-                                </tr>
-                                <tr>
-                                    <th>핸드폰(hp)</th>
-                                    <td>{personVo.hp}</td>
-                                </tr>
-                                <tr>
-                                    <th>회사(company)</th>
-                                    <td>{personVo.company}</td>
-                                </tr>
-                                <tr>
-                                    <td><Link to={`/editform/${personVo.personID}`} rel="noreferrer noopener">[수정폼으로 이동]</Link></td>
-                                    <td><button type="button" onClick={()=>{ handleDel(personVo.personId) }}>삭제</button></td>
-                                </tr>
-
-                            </tbody>
-                        </table>
-                        <br />
-
+                    <div>
+                        <ItemPerson/>
                     </div>
                 )
 
@@ -132,4 +114,4 @@ const List2 = () => {
     );
 }
 
-export default List2;
+export default List3;
