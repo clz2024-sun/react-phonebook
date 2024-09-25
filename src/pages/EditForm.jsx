@@ -42,7 +42,7 @@ const EditForm = () => {
 
             }else {
                 //실패로직 리스트로 보내기
-                navigate("/list");
+                navigate("/");
             }
 
         
@@ -90,7 +90,7 @@ const EditForm = () => {
 
             if(response.data.result === 'success'){
                 //성공로직
-                navigate("/list");
+                navigate("/");
             }else{
                 alert(response.data.message);
             }

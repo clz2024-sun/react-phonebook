@@ -100,7 +100,10 @@ const List3 = () => {
             {personList.map((personVo)=>{
                 return (
                     <div>
-                        <ItemPerson/>
+                        <ItemPerson key={personVo.personId} 
+                                    person={personVo} 
+                                    delPerson={handleDel}            
+                        />
                     </div>
                 )
 
